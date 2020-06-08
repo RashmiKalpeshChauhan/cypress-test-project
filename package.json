@@ -1,0 +1,19 @@
+{
+  "name": "cypress-automation-proj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^4.7.0",
+    "cypress-xpath": "^1.6.0",
+    "mocha": "^7.2.0",
+    "mochawesome": "^6.1.1",
+    "mochawesome-merge": "^4.1.0",
+    "mochawesome-report-generator": "^5.1.0"
+  }
+}
