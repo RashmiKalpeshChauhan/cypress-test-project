@@ -2,7 +2,7 @@
 require('cypress-xpath')
 describe('Login Test case', () => {
     beforeEach(() => {
-       // cy.fixture('testData.json').as('testdata')  
+        cy.fixture('testData.json').as('testdata')  
        // cy.visit("https://www.tajawal.ae/en")   
        cy.visit("https://ae.almosafer.com/ar")        
       })    
@@ -23,8 +23,8 @@ describe('Login Test case', () => {
 
   
 
-    it("ticket value should less than 10000", () => {        
-        cy.searchFlight();
+    it("ticket value should less than 10000", (testData) => {        
+        cy.searchFlight(origin,destination);    
         cy.selectDate();        
         cy.searchButton();
         cy.lowestPrice();        
