@@ -1,27 +1,18 @@
 ///<reference types="cypress" />
 require('cypress-xpath')
 describe('Login Test case', () => {
-    beforeEach(() => {
-        cy.fixture('testData.json').as('testdata')  
-       // cy.visit("https://www.tajawal.ae/en")   
-       cy.visit("https://ae.almosafer.com/ar")        
-      })    
+    beforeEach((testdata) => {      
+      cy.fixture('testData.json').as('testdata') 
+      cy.visit(url)
+    //    cy.visit(url,{
+    //     onBeforeLoad (win) {           
+    //         Object.defineProperty(win.navigator, 'language', {
+    //             get: cy.stub().returns('English').as('language')
+    //         })
+    //       }
+    //    })        
+      })  
 
-    xit("ticket value should less than 10000", () => {
-        cy.get('@testdata').then((testdata) => {
-            cy.searchFlight(testdata.origin, testdata.destination)
-            cy.get('.jVxLcd + div').each($el => {
-                const price = $el.text();
-                const priceRegex = price.replace(/[$.,]+/g, '');
-                const priceValue = parseInt(priceRegex)
-                cy.log('priceValue: ', priceValue);
-                expect(priceValue).to.be.lessThan(10000);
-            })
-        })
-        
-    })
-
-  
 
     it("ticket value should less than 10000", (testData) => {        
         cy.searchFlight(origin,destination);    

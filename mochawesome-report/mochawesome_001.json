@@ -1,0 +1,128 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-06-24T07:12:06.825Z",
+    "end": "2020-06-24T07:12:08.609Z",
+    "duration": 1784,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "fa30bcd6-1bd9-4fc7-9e56-ec66f971a626",
+      "title": "",
+      "fullFile": "cypress\\integration\\tests\\searchFlight.js",
+      "file": "cypress\\integration\\tests\\searchFlight.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e284a271-fafd-4bd7-a889-645d5a2c13fd",
+          "title": "Login Test case",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "ticket value should less than 10000",
+              "fullTitle": "Login Test case ticket value should less than 10000",
+              "timedOut": null,
+              "duration": 1145,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.searchFlight(origin, destination);\ncy.selectDate();\ncy.searchButton();\ncy.lowestPrice();",
+              "err": {
+                "message": "ReferenceError: url is not defined\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Login Test case`",
+                "estack": "ReferenceError: url is not defined\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Login Test case`\n    at Context.eval (http://localhost:56979/__cypress/tests?p=cypress\\integration\\tests\\searchFlight.js:8:18)",
+                "diff": null
+              },
+              "uuid": "fe43c6e5-376f-4b98-89af-84f4271afc8e",
+              "parentUUID": "e284a271-fafd-4bd7-a889-645d5a2c13fd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "validate the languge of page is english",
+              "fullTitle": "Login Test case validate the languge of page is english",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "if (cy.title().should('not.have.value', 'tajawal')) {\n    cy.get('[data-testid=\"Header__LanguageSwitch\"]').click();\n    cy.xpath(\"//font[text()='English']\").click();\n    cy.wait(10000);\n}\ncy.get('h2').contains(\"LET'S BOOK YOUR NEXT TRIP\");",
+              "err": {},
+              "uuid": "12137252-650b-4dd3-8875-4a41bdd948c7",
+              "parentUUID": "e284a271-fafd-4bd7-a889-645d5a2c13fd",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "fe43c6e5-376f-4b98-89af-84f4271afc8e"
+          ],
+          "pending": [],
+          "skipped": [
+            "12137252-650b-4dd3-8875-4a41bdd948c7"
+          ],
+          "duration": 1145,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
