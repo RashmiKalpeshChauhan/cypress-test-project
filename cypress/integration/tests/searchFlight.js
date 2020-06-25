@@ -1,26 +1,20 @@
 ///<reference types="cypress" />
 require('cypress-xpath')
-describe('Login Test case', () => {
-    beforeEach((testdata) => {      
-      cy.fixture('testData.json').as('testdata') 
-      cy.visit(url)
-    //    cy.visit(url,{
-    //     onBeforeLoad (win) {           
-    //         Object.defineProperty(win.navigator, 'language', {
-    //             get: cy.stub().returns('English').as('language')
-    //         })
-    //       }
-    //    })        
-      })  
+xdescribe('Login Test case', () => {
+    before(function(){
+        cy.fixture('testData').then((data)=>{
+            this.data=data   
+        })
+    })
 
-
-    it("ticket value should less than 10000", (testData) => {        
-        cy.searchFlight(origin,destination);    
+    it("ticket value should less than 10000", function(){ 
+        cy.visit("/")       
+        cy.searchFlight(this.data.origin,this.data.destination);    
         cy.selectDate();        
         cy.searchButton();
         cy.lowestPrice();        
     })
-    it("validate the languge of page is english", () => {
+    it("validate the languge of page is english", function() {
         if(cy.title().should('not.have.value', 'tajawal')){
             cy.get('[data-testid="Header__LanguageSwitch"]').click() 
             cy.xpath("//font[text()='English']").click()
